@@ -3,15 +3,15 @@ require "delegate"
 class Porcupine
   class Observable < SimpleDelegator
     def subscribe(*args, &block)
-      raise ArgumentError unless block_given? || (args.first && args.first["onNext"])
+      raise ArgumentError unless block_given? || args.first
 
       on_next = if block_given?
                   block
                 else
-                  args.first["onNext"]
+                  args.shift
                 end
 
-      on_error = args.first && args.first["onError"]
+      on_error = !block_given? && args.shift
 
       wrapped = lambda do |value_or_exception|
         if value_or_exception.is_a?(Exception)
@@ -21,7 +21,11 @@ class Porcupine
         end
       end
 
-      __getobj__.subscribe("onNext" => wrapped, "onError" => on_error)
+      if on_error
+        __getobj__.subscribe(wrapped, on_error, *args)
+      else
+        __getobj__.subscribe(wrapped)
+      end
     end
   end
 end

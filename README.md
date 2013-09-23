@@ -58,7 +58,9 @@ If you provide an onError function, then the function will receive exceptions ra
 
 ```ruby
 observer = porcupine.observe
-observer.subscribe("onNext" => lambda {}, "onError" => lambda {|exception| puts exception}) # Will puts any exception
+on_next  = lambda {|val| puts "All good: #{val}"}
+on_error = lambda {|exception| puts "Uh oh: #{exception}"}
+observer.subscribe(on_next, on_error)
 ```
 
 ## Contributing

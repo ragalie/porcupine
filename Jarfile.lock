@@ -5,25 +5,22 @@ groups:
     dependencies:
     - com.google.code.findbugs:jsr305:jar:2.0.0
     - com.netflix.archaius:archaius-core:jar:0.4.1
-    - com.netflix.hystrix:hystrix-core:jar:1.3.2
-    - com.netflix.rxjava:rxjava-core:jar:0.10.1
-    - com.netflix.rxjava:rxjava-jruby:jar:0.10.1
+    - com.netflix.hystrix:hystrix-core:jar:1.3.5
+    - com.netflix.rxjava:rxjava-core:jar:0.13.4
     - commons-configuration:commons-configuration:jar:1.8
     - commons-lang:commons-lang:jar:2.6
     - commons-logging:commons-logging:jar:1.1.1
     - org.slf4j:slf4j-api:jar:1.7.5
     - org.slf4j:slf4j-simple:jar:1.7.5
     artifacts:
-    - jar:com.netflix.rxjava:rxjava-jruby:jar:0.10.1:
-        transitive:
-          com.netflix.rxjava:rxjava-core:jar:0.10.1: {}
-    - jar:com.netflix.hystrix:hystrix-core:jar:1.3.2:
+    - jar:com.netflix.hystrix:hystrix-core:jar:1.3.5:
         transitive:
           com.google.code.findbugs:jsr305:jar:2.0.0: {}
           com.netflix.archaius:archaius-core:jar:0.4.1:
             commons-configuration:commons-configuration:jar:1.8:
               commons-logging:commons-logging:jar:1.1.1: {}
               commons-lang:commons-lang:jar:2.6: {}
+          com.netflix.rxjava:rxjava-core:jar:0.13.4: {}
     - jar:org.slf4j:slf4j-simple:jar:1.7.5:
         transitive:
           org.slf4j:slf4j-api:jar:1.7.5: {}
