@@ -1,10 +1,12 @@
 *.gem
 *.rbc
 .bundle
+.jbundler
 .config
 .idea
 .yardoc
 Gemfile.lock
+Jarfile.lock
 InstalledFiles
 _yardoc
 coverage

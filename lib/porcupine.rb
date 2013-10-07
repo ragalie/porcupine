@@ -1,7 +1,4 @@
-require "lock_jar"
-
-lockfile = File.expand_path( "../../Jarfile.lock", __FILE__ )
-LockJar.load(lockfile)
+require "jbundler"
 
 require "porcupine/porcupine"
 require "porcupine/exceptions"
