@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "porcupine"
-  spec.version       = "0.2.0"
+  spec.version       = "0.2.1"
   spec.authors       = ["Mike Ragalie"]
   spec.email         = ["ragalie@gmail.com"]
   spec.summary       = "JRuby wrapper for Hystrix"
